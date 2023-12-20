@@ -1,0 +1,78 @@
+body{
+    background-color: #c2c2c2;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    color: black;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divider-horizontal{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid #0f0f0f;
+}
+.divider-vertical{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    border: 1px solid #0f0f0f;
+}
+.card{
+    background-color: #dbdada;
+    width: 95%;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card-header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-body{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+input[type="text"] , input[type="password"] , input[type="email"] , input[type="number"] , input[type="date"] , input[type="time"] , input[type="file"] , select , textarea{
+    width: 80%;
+    height: 50%;
+    border: 0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000;
+    font-size: 20px;
+    margin: 10px;
+    padding-left: 10px;
+}
+input[type="submit"]{
+    width: 50%;
+    height: 30%;
+    border-radius: 10px;
+    background-color: #9e9e9e;
+    color: black;
+    font-size: 20px;
+    padding-left: 10px;
+    margin: 10px;
+}
