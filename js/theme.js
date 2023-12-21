@@ -4,7 +4,7 @@ let themeSelector = document.querySelector("#theme");
 setTheme(localStorage.getItem('theme'));
 
 themeSelector.addEventListener('click' , ()=>{
-    themeSelector.icon = changeTheme() === 'dark' ? "ri:moon-fill" : "mingcute:sun-fill";
+    changeTheme();
 });
 
 function changeStylesheet(stylesheet , href){
@@ -21,6 +21,7 @@ function setTheme(theme){
     else{
         changeStylesheet(stylesheet , "css/dark.css");
     }
+    themeSelector.icon = theme === 'dark' ? "ri:moon-fill" : "mingcute:sun-fill";
 }
 
 function changeTheme(){
