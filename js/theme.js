@@ -1,7 +1,7 @@
 let stylesheet = document.querySelector("#stylesheet");
 let themeSelector = document.querySelector("#theme");
 
-setTheme(localStorage.getItem('theme'));
+setTheme(localStorage.getItem('theme')|| 'dark');
 
 themeSelector.addEventListener('click' , ()=>{
     changeTheme();
@@ -12,7 +12,7 @@ function changeStylesheet(stylesheet , href){
 }
 
 function setTheme(theme){
-    if(theme === null){
+    if(theme === null || theme === undefined){
         theme = dark;
     }
     if(theme === "light"){
