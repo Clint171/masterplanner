@@ -33,16 +33,16 @@ function onSignIn(credentials) {
         headers: {
             "Content-Type": "application/json"
         }
-    }).then(() => {
+    }).then((data) => {
         if(data.token){
             localStorage.setItem('token', data.token);
-            window.location.href = "/dashboard.html"
+            window.location.href = "/dashboard.html";
         }
         else if(data.verified === false){
-            window.location.href = "/verify-email.html"
+            window.location.href = "/verify-email.html";
         }
         else if(data.verified === true){
-            window.location.href = "/dashboard.html"
+            window.location.href = "/dashboard.html";
         }
         else{
             alert("An error occurred!");
