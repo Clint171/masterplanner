@@ -1,8 +1,10 @@
-let form = document.querySelector('form');
-
 // google sign up
 function onSignUp(credentials) {
-    console.log(credentials);
+    // handle cancellation
+    if (credentials === null) {
+        return;
+    }
+    alert(credentials);
     var profile = credentials.payload
     form.firstName.value = profile.given_name;
     form.lastName.value = profile.family_name;
