@@ -11,9 +11,42 @@ function onSignUp(credentials) {
             "Content-Type": "application/json"
         }
     }).then(() => {
-        alert("Account created successfully");
-        window.location.href = "/home.html"
+        localStorage.setItem('data', JSON.stringify(data));
+        if(data.verified === true){
+            window.location.href = "/dashboard.html";
+        }
+        else{
+            window.location.href = "/verify-email.html";
+        }
     });
 }
 
-// google log in
+// google sign in
+function onSignIn(credentials) {
+    // handle cancellation
+    if (credentials === null) {
+        return;
+    }
+    fetch("http://127.0.0.1:3000/google-signin", {
+        method: "POST",
+        body: JSON.stringify(credentials),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(() => {
+        if(data.token){
+            localStorage.setItem('token', data.token);
+            window.location.href = "/dashboard.html"
+        }
+        else if(data.verified === false){
+            window.location.href = "/verify-email.html"
+        }
+        else if(data.verified === true){
+            window.location.href = "/dashboard.html"
+        }
+        else{
+            alert("An error occurred!");
+        }
+    });
+}
+

@@ -17,8 +17,8 @@ form.addEventListener('submit' , (event)=>{
                 "password"  : form.password.value
             })
         }
-        fetch("http://127.0.0.1:3000/signup" , fetchOptions).then(()=>{
-            alert("Account created successfully");
+        fetch("http://127.0.0.1:3000/signup" , fetchOptions).then((data)=>{
+            localStorage.setItem('data', JSON.stringify(data));
             window.location.href = "/verify-email.html"
         });
     }
