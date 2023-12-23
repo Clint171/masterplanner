@@ -45,7 +45,7 @@ function onSignIn(credentials) {
             window.location.href = "/dashboard.html";
         }
         else{
-            alert("An error occurred!");
+            alert("Error: "+ JSON.stringify(data));
         }
     });
 }
