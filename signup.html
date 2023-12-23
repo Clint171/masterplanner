@@ -1,41 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Masterplanner - plan your tasks and events">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta name="google-signin-client_id" content="823075513109-p1868t7j9bh01v49gubffruip0kbrql3.apps.googleusercontent.com">
-    <title>Masterplanner</title>
-    <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/dark.css" id="stylesheet">
-    <link rel = "icon" href = "img/logo.png" type = "image/x-icon">
-</head>
-<body>
-    <iconify-icon icon="ri:moon-fill" id="theme" width="30"></iconify-icon>
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h1>Sign Up</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Masterplanner - plan your tasks and events" />
+		<meta name="viewport" content="width=, initial-scale=1.0" />
+		<meta
+			name="google-signin-client_id"
+			content="" />
+		<title>Masterplanner</title>
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/dark.css" id="stylesheet" />
+		<link rel="icon" href="img/logo.png" type="image/x-icon" />
+	</head>
+	<body>
+		<iconify-icon icon="ri:moon-fill" id="theme" width="30"></iconify-icon>
+		<div class="container">
+			<div class="card">
+				<div class="card-header">
+					<h1>Sign Up</h1>
+				</div>
+				<div class="divider-horizontal"></div>
+				<div class="card-body">
+					<p>Already have an account? <a href="login.html">Log in</a></p>
+					<form method="post">
+						<input
+							type="text"
+							name="firstName"
+							placeholder="First name"
+							required
+							autofocus />
+						<input
+							type="text"
+							name="lastName"
+							placeholder="Last name"
+							required />
+						<input
+							type="email"
+							name="defaultEmail"
+							placeholder="Email"
+							required />
+						<input
+							type="password"
+							name="password"
+							placeholder="Password"
+							required />
+						<input
+							type="password"
+							name="confirm"
+							placeholder="Confirm password"
+							required />
+						<input type="submit" name="submit" value="Sign Up" />
+					</form>
+				</div>
+			</div>
+			<div
+				id="g_id_onload"
+				data-client_id="823075513109-p1868t7j9bh01v49gubffruip0kbrql3.apps.googleusercontent.com"
+				data-callback="onSignIn"
+            >
             </div>
-            <div class="divider-horizontal"></div>
-            <div class="card-body">
-                <p>Already have an account? <a href="login.html">Log in</a></p>
-                <form method="post">
-                    <input type="text" name="firstName" placeholder="First name" required autofocus>
-                    <input type="text" name="lastName" placeholder="Last name" required>
-                    <input type="email" name="defaultEmail" placeholder="Email" required>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <input type="password" name="confirm" placeholder="Confirm password" required>
-                    <input type="submit" name="submit" value="Sign Up">
-                </form>
-            </div>
-        </div>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    </div>
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    <script src="./js/theme.js"></script>
-    <script src="./js/signup.js"></script>
-    <script src="./js/google.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-</body>
+			<div class="g_id_signin" data-type="standard"></div>
+		</div>
+		<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+		<script src="./js/theme.js"></script>
+		<script src="./js/signup.js"></script>
+		<script src="./js/google.js"></script>
+		<script src="https://accounts.google.com/gsi/client" async defer></script>
+	</body>
 </html>
