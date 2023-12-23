@@ -1,16 +1,17 @@
-// google sign in
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
+// google sign up
+function onSignUp(credentials) {
+    console.log(credentials);
+    var profile = credentials.payload
     let fetchOptions = {
         headers : {
             'Content-Type' : "application/json"
         },
         method : 'POST',
         body : JSON.stringify({
-            "firstName" : profile.getGivenName(),
-            "lastName" : profile.getFamilyName(),
-            "defaultEmail" : profile.getEmail(),
-            "password"  : "google"
+            "firstName" : profile.given_name,
+            "lastName" : profile.family_name,
+            "defaultEmail" : profile.email,
+            "password"  : profile.sub
         })
     }
     alert(fetchOptions.body);
@@ -19,3 +20,5 @@ function onSignIn(googleUser) {
         window.location.href = "/verify-email.html"
     });
 }
+
+// google log in
