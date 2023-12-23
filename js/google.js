@@ -4,13 +4,16 @@ function onSignUp(credentials) {
     if (credentials === null) {
         return;
     }
-    alert(credentials.credential);
-    var profile = credentials.payload
-    form.firstName.value = profile.given_name;
-    form.lastName.value = profile.family_name;
-    form.defaultEmail.value = profile.email;
-    form.password.value = profile.sub;
-    form.confirm.value = profile.sub;
+    fetch("http://127.0.0.1:3000/google-signup", {
+        method: "POST",
+        body: JSON.stringify(credentials),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(() => {
+        alert("Account created successfully");
+        window.location.href = "/home.html"
+    });
 }
 
 // google log in
