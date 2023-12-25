@@ -10,7 +10,7 @@ function onSignUp(credentials) {
         headers: {
             "Content-Type": "application/json"
         }
-    }).then(() => {
+    }).then((data) => {
         localStorage.setItem('data', JSON.stringify(data));
         if(data.verified === true){
             window.location.href = "/dashboard.html";

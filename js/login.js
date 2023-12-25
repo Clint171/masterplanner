@@ -26,7 +26,7 @@ form.addEventListener('submit', function (e) {
                 localStorage.setItem('data', JSON.stringify(data));
                 window.location.href = '/dashboard.html';
             } else {
-                alert(data.message);
+                alert(data);
             }
         });
 });
