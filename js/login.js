@@ -24,7 +24,7 @@ form.addEventListener('submit', function (e) {
             console.log(data);
             if (data.status === 'ok') {
                 localStorage.setItem('data', JSON.stringify(data));
-                window.location.href = '/dashboard.html';
+                window.location.href = 'masterplanner/dashboard.html';
             } else {
                 alert(data);
             }
