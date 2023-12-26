@@ -13,10 +13,10 @@ function onSignUp(credentials) {
     }).then((data) => {
         localStorage.setItem('data', JSON.stringify(data));
         if(data.verified === true){
-            window.location.href = "materplanner/dashboard.html";
+            window.location.href = "/dashboard.html";
         }
         else{
-            window.location.href = "masterplanner/verify-email.html";
+            window.location.href = "/verify-email.html";
         }
     });
 }
@@ -36,13 +36,13 @@ function onSignIn(credentials) {
     }).then((data) => {
         if(data.token){
             localStorage.setItem('token', data.token);
-            window.location.href = "masterplanner/dashboard.html";
+            window.location.href = "/dashboard.html";
         }
         else if(data.verified === false){
-            window.location.href = "masterplanner/verify-email.html";
+            window.location.href = "/verify-email.html";
         }
         else if(data.verified === true){
-            window.location.href = "masterplanner/dashboard.html";
+            window.location.href = "/dashboard.html";
         }
         else{
             alert("Error: "+ JSON.stringify(data));
